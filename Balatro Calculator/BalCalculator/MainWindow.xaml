@@ -1,0 +1,103 @@
+﻿<Window x:Class="BalCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BalCalculator"
+        mc:Ignorable="d"
+        Title="Balatro Calculator" Height="720" Width="1280"
+        FontSize="32">
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" VerticalAlignment="Stretch"
+               VerticalContentAlignment="Center" HorizontalAlignment="Stretch"
+               HorizontalContentAlignment="Center">
+            Deck
+        </Label>
+        
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="lstNames" />
+
+        <Button Grid.Row="0" x:Name="cardSet" Click="ButtonSetCard_Click"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            Set Card
+        </Button>
+
+        <Grid Grid.Row="1" x:Name="CardGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" x:Name="rankBox"
+                     VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                Rank
+            </TextBox>
+            <TextBox Grid.Row="1" x:Name="suitBox"
+                     VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                Suit
+            </TextBox>
+            <TextBox Grid.Row="2" x:Name="enhBox"
+                     VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                Enhancement
+            </TextBox>
+            <TextBox Grid.Row="3" x:Name="ediBox"
+                     VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                Edition
+            </TextBox>
+            <TextBox Grid.Row="4" x:Name="sealBox"
+                     VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                Seal
+            </TextBox>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="DeckGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="Black" BorderThickness="5,5,2.5,5" Grid.Column="0">
+                <StackPanel Background="#6FFF0000" x:Name="HeartsPanel">
+                
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="2.5,5,2.5,5" Grid.Column="1">
+                <StackPanel Background="#6F0000FF" x:Name="DiamondsPanel">
+
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="2.5,5,2.5,5" Grid.Column="2">
+                <StackPanel Background="#6F000000" x:Name="ClubsPanel">
+
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="2.5,5,5,5" Grid.Column="3">
+                <StackPanel Background="#6FFFFF00" x:Name="SpadesPanel">
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
